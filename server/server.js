@@ -23,7 +23,7 @@ io.on('connection', (socket)=>{
         console.log('create message', message);
         io.emit('newMessage', generateMessage(message.from, message.text));
 
-        sendACK('status ok 200');
+        sendACK();
     });
 
     socket.on('createLocationMessage', (coords)=>{
