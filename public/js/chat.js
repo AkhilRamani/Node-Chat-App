@@ -33,7 +33,6 @@ socket.on('disconnect', function() {
 });
 
 socket.on('updateUserList', function(users){
-    console.log(users);
     var ol = jQuery('<ol></ol>');
 
     users.forEach(function(user){
@@ -74,7 +73,6 @@ jQuery('#message-form').on('submit', function(e){
 
     var messageTextBox = jQuery('[name=message]');
     socket.emit('createMessage', {
-        from: 'User',
         text: messageTextBox.val()
     }, function(){
         messageTextBox.val('');
